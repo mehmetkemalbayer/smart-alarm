@@ -20,7 +20,7 @@ passport.use(new FitbitStrategy({
 ));
 
 app.get('/auth/fitbit',
-  passport.authenticate('fitbit', { scope: ['activity','heartrate','location','profile'] }
+  passport.authenticate('fitbit', { scope: ['settings','sleep','location','profile'] }
 ));
  
 app.get( '/auth/fitbit/callback', passport.authenticate( 'fitbit', { 
