@@ -28,7 +28,7 @@ app.get( '/auth/fitbit/callback', passport.authenticate( 'fitbit', {
 }));
 
 app.get('/',function(req,res){
-  console.log("index loaded");
+  console.log("index loaded:" + path.join(__dirname+'/index.html'));
   res.sendFile(path.join(__dirname+'/index.html'));
   //__dirname : It will resolve to your project folder.
 });
