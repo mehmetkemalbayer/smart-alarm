@@ -1,7 +1,7 @@
 const FITBIT_CLIENT_ID = process.env.FITBIT_CLIENT_ID;
 const FITBIT_CLIENT_SECRET = process.env.FITBIT_CLIENT_SECRET;
 const CALLBACK_URL = process.env.callbackURL;
-
+var passport = require('passport');
 var FitbitStrategy = require( 'passport-fitbit-oauth2' ).FitbitOAuth2Strategy;;
  
 passport.use(new FitbitStrategy({
