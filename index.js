@@ -6,6 +6,7 @@ const app = express();
 var passport = require('passport');
 var FitbitStrategy = require( 'passport-fitbit-oauth2' ).FitbitOAuth2Strategy;;
 var port = process.env.PORT || 8080;
+var path = require('path');
 passport.use(new FitbitStrategy({
     clientID:     FITBIT_CLIENT_ID,
     clientSecret: FITBIT_CLIENT_SECRET,
