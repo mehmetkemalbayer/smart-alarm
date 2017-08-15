@@ -5,7 +5,7 @@ const express = require('express');
 const app = express(); 
 var passport = require('passport');
 var FitbitStrategy = require( 'passport-fitbit-oauth2' ).FitbitOAuth2Strategy;;
-
+var port = process.env.PORT || 8080;
 passport.use(new FitbitStrategy({
     clientID:     FITBIT_CLIENT_ID,
     clientSecret: FITBIT_CLIENT_SECRET,
@@ -31,4 +31,8 @@ app.get('/',function(req,res){
   console.log("index loaded");
   res.sendFile(path.join(__dirname+'/index.html'));
   //__dirname : It will resolve to your project folder.
+});
+
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
 });
