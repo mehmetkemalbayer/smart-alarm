@@ -13,9 +13,9 @@ passport.use(new FitbitStrategy({
     callbackURL: CALLBACK_URL
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ fitbitId: profile.id }, function (err, user) {
-      return done(err, user);
-    });
+    console.log("accessToken:" + accessToken);
+    console.log("refreshToken:" + refreshToken);
+    console.log("profile.id" + profile.id);
   }
 ));
 
